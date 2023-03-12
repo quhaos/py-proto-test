@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package p3_v1;
+
+option java_package = "com.al.cc.java.p3";
+option java_outer_classname = "FeedBackSchema";
+
+message Feedback {
+   int64 life_cycle_id = 1;
+   string name = 2;
+   string gc_id = 3;
+   Gender gender = 4;
+   string id = 5;
+   ParkingLotType parkingLotType=6;
+   bool ePay =7 ;
+   int64 create_time = 8;
+
+//  oneof object {
+//    ParkingLotFeedback parking_lot_feedback = 5;
+//    CcmFeedback ccm_feedback =6;
+//  }
+}
+
+message ParkingLotFeedback{
+  ParkingLot parking_lot=1;
+}
+
+message CcmFeedback{
+}
+
+message ParkingLot{
+  string id =1;
+  ParkingLotType parkingLotType=2;
+  bool ePay =3 ;
+}
+enum ParkingLotType{
+  UNDERGROUND = 0;
+  OUTSIDE = 1;
+}
+
+enum Gender {
+  FEMALE = 0;
+  MALE = 1;
+}
