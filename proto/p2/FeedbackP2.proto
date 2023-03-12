@@ -3,7 +3,7 @@ syntax = "proto2";
 package p2_v1;
 
 option java_package = "com.al.cc.java.p2";
-option java_outer_classname = "FeedBackSchema";
+option java_outer_classname = "FeedBackSchemas";
 
 message Feedback {
    optional int64 life_cycle_id = 1 [default=-9999];
@@ -13,24 +13,8 @@ message Feedback {
    optional string id = 5 [default='-9999'];
    optional ParkingLotType parkingLotType=6 [default=OUTSIDE];
    optional bool ePay =7  [default =true];
-//  oneof object {
-//    ParkingLotFeedback parking_lot_feedback = 5;
-//    CcmFeedback ccm_feedback =6;
-//  }
 }
 
-message ParkingLotFeedback{
-  optional ParkingLot parking_lot=1;
-}
-
-message CcmFeedback{
-}
-
-message ParkingLot{
-  optional string id =1 [default='-9999'];
-  optional ParkingLotType parkingLotType=2[default=OUTSIDE];
-  optional bool ePay =3 [default =true];
-}
 enum ParkingLotType{
   UNDERGROUND = 0;
   OUTSIDE = 1;

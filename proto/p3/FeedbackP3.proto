@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package p3_v1;
+
+message Feedback {
+   int64 life_cycle_id = 1;
+   string name = 2;
+   string gc_id = 3;
+   Gender gender = 4;
+   string id = 5;
+   ParkingLotType parkingLotType=6;
+   bool ePay =7 ;
+}
+
+enum ParkingLotType{
+  UNDERGROUND = 0;
+  OUTSIDE = 1;
+}
+
+enum Gender {
+  FEMALE = 0;
+  MALE = 1;
+}
